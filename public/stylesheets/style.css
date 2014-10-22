@@ -1,0 +1,107 @@
+.navbar {
+  margin-bottom: 0;
+}
+.jumbotron {
+  background-image:url('http://goo.gl/04j7Nn');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
+  color:white;
+}
+
+
+.jumbotron .container {
+  position: relative;
+  top:50px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 52px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 26px;
+  color: #fff;
+}
+
+.authorsTitle {
+  margin-left: 25px;
+}
+
+.combo {
+  padding: 24px;
+}
+
+
+ul { /* Resets given margins and padding */
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* Removes bullet points */
+}
+
+.results li {
+  border-bottom: 1px solid #CCCCCC;
+  clear: both;
+  padding: 24px;
+}
+
+.info {
+  float: left;
+  font-size: 22px;
+  color: #4A4A4A;
+}
+.editPost {
+  margin-top: 10px;
+}
+.deleteAuthor {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.addBook {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.editAuthor {
+  margin-top: 10px;
+}
+.morePosts {
+  margin-top: 10px;
+}
+
+article {
+  font-size: 15px;
+}
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  display: inline-block;
+}
+
+footer {
+  margin-top: -10px;
+  text-align: center;
+}

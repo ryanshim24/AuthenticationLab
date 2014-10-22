@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editing Post Page</title>
+</head>
+<body>
+<%  if (!isAuthenticated){ %>
+    <br>
+    <div class="alert alert-warning">
+    <a href="/login">You must be logged in to edit an author</a>
+    </div>
+  <%  } else {%>
+    <form action="/posts/<%= post.id %>?_method=put" method="post">
+    <label for="title">Title:</label>
+    <input name="post[title]" value="<%= post.title %>" autofocus>
+    <br>
+    <br>
+    <textarea rows="10" cols="75" type="text" name="post[body]" value="<%= post.body %>"></textarea>
+    <br>
+    <input type="submit" value="Save">
+  <% } %>
+  </form>
+  </form>
+</body>
+</html>

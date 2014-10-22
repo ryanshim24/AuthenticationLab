@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Specific Authors Posts</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  
+    <div class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="/">Blogs</a>
+          </div>
+          <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul class = "nav navbar-nav navbar-right">
+              <li><a href="/">Home</a></li>
+              <li><a href="/authors">Authors</a></li>
+              <li class="active"><a href="/posts">Posts</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+         </div>
+        </div>
+    </div>
+
+     <% if(allPosts.length===0) {%>
+     <div class="container">
+      <h2>Sorry, there are no Posts in this Author's directory.</h2>
+      <p class="lead">Would you like to add a Post?</p>
+      <br>
+      <a class="btn btn-primary btn-lg" role="button" href="/posts/<%=author.id%>/new">Create New »</a>
+     </div>
+     <%} else { %>
+     <div class="results container">
+      <h1>All of <%= author.name %>'s posts</h1>
+      <br>
+      <ul>
+      <% allPosts.forEach(function(post){ %>
+        <li class="cf">
+          <div class="info"><a href="/posts/<%=post.id%>">Title: <%= post.title %></a>
+          <br>
+          Tag: <%= post.Tags[0].name %>
+          <article><%= post.body %></article></div>
+
+          <form action="/posts/<%= post.id %>?_method=delete" method="post">
+            <button type="submit" class="btn btn-danger pull-right deleteAuthor">Delete</button>
+          </form>
+          <a class="btn btn-primary  pull-right editPost" role="button" href="/posts/<%=post.id%>/edit">Edit this Post »</a>
+        </li>
+     <% }); %>
+     </ul>
+     </div>
+    <%} %>
+
+     <br>
+     <div class="combo container">
+        <a class="btn btn-primary btn-sm" role="button" href="/posts">See our Posts! »</a>
+        <a class="btn btn-primary btn-sm authorsTitle" role="button" href="/authors">See our Authors! »</a>
+     </div>
+     <br>
+
+    <footer>
+        © Ryan's Awesome 2014
+    </footer>
+    
+    <br>
+
+</body>
+</html>
+

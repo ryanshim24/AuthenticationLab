@@ -1,0 +1,36 @@
+{
+  "name": "sequelize_blog_lab",
+  "version": "1.0.0",
+  "description": "In this lab we will be making a simple blog platform. In many ways this app will be similar to the Daily Planet app. Feel free to modify it if you wish.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanshim24/sequelize_blog_lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanshim24/sequelize_blog_lab/issues"
+  },
+  "homepage": "https://github.com/ryanshim24/sequelize_blog_lab",
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "body-parser": "^1.9.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.3",
+    "cookie-session": "^1.0.2",
+    "ejs": "^1.0.0",
+    "express": "^4.9.8",
+    "locus": "^0.1.0",
+    "lodash": "^2.4.1",
+    "method-override": "^2.3.0",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "pg": "^3.6.2",
+    "sequelize": "^2.0.0-rc2",
+    "sequelize-cli": "^0.3.3"
+  }
+}

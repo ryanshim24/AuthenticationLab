@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Posts Page</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  
+    <div class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="/">Blogs</a>
+          </div>
+          <div class="navbar-collapse collapse" style="height: 1px;">
+            <ul class = "nav navbar-nav navbar-right">
+              <li><a href="/">Home</a></li>
+              <li><a href="/authors">Authors</a></li>
+              <li class="active"><a href="/posts">Posts</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+         </div>
+        </div>
+    </div>
+
+    <%if(allPosts.length===0)  {%>
+     <div class="container">
+      <h2>Sorry, there are no Posts in this current directory.</h2>
+      <p class="lead">Go add some Posts!</p>
+      <br>
+      <a class="btn btn-primary btn-md" role="button" href="/authors">See Authors! »</a>
+     </div>
+
+    <%}else{  %>
+      <div class="results container">
+        <h1>All my Posts!</h1>
+        <p class="lead"><a href="/authors">See all the Authors</a></p>
+        <br>
+        <ul>
+        <% allPosts.forEach(function(post){ %>
+          <li class="cf">
+            <div class="info"><a href="/posts/<%=post.id%>">Title: <%= post.title %></a>
+            <br>
+            <article><%= post.body %></article>
+            </div>
+            <a class="btn btn-primary btn- pull-right morePosts" role="button" href="/authors/<%=post.AuthorId%>/posts">More Posts from this Author »</a>
+          </li>
+        <% }); %>
+        </ul>
+      </div>
+    <%} %>  
+  
+
+  <br>
+
+    <footer>
+        © Ryan's Awesome 2014
+    </footer>
+  <br>
+
+</body>
+</html>
